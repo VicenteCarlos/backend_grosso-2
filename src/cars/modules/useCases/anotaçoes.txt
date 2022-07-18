@@ -1,0 +1,6 @@
+controllers: classes que recebem a requisiçao e retornam a resposta pra quem esta chamando elas
+
+useCases: operaçoes que estamos fazendo, exemplo: criaçao de categoria ou listagem de categoria
+useCases tambem pode-se entender como regras de negocio do app
+pra cada operaçao, faz uma pasta de useCase
+todo useCase so vai ter um controller

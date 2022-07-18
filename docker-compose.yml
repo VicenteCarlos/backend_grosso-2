@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+  database_ignite: #esse database_ignite "esta" em uma maquina que tem o proprio IP
+    image: postgres
+    container_name: database_ignite
+    restart: always
+    ports: 
+      - 5432:5432 #essa linha e pra interface grafica
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=ignite
+      - POSTGRES_DB=rentx
+    volumes:
+      - pgdata:/data/postgres
+    network_mode: host
+  app: #assim como esse ap tem o ip dela e esta em uma maquina
+    build: .
+    #entrypoint: .docker/entrypoint.sh
+    container_name: rentx
+    ports:
+      - 3333:3333
+    volumes:
+      - .:/usr/app
+    network_mode: host #essa linha faz com que esse container (rentx) trabalhe na rede host, assim como no container acima  (database_ignite) porque ele tambem tem o 'network_mode: host'
+    depends_on: #quando depende do banco de dados essa linha, uma aplicaç~ao depende da outra
+      - database_ignite
+  
+volumes:
+  pgdata:
+    driver: local

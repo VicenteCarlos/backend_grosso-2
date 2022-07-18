@@ -1,0 +1,21 @@
+- Docker
+	
+	1. É uma ferramenta para criação de containers
+	2. Container: ambiente isolado
+	3. Imagens: instruções para criação de um container
+
+	systemctl start docker
+
+#entrypoint 'e um arquivo com comandos executaveis, como se fosse uma linha de comando no shell'
+
+#comandos rodam aqui(entrypoint.sh) ao inves do docker compose
+	
+#comando pra verificar o ip do container: docker exec <container> cat /etc/hosts
+
+docker ps -a
+
+sudo docker-compose up --force-recreate -d
+
+sudo docker-compose up -d --build
+
+docker-compose down && docker-compose build --no-cache && docker-compose up

@@ -3,6 +3,7 @@
 	1. É uma ferramenta para criação de containers
 	2. Container: ambiente isolado
 	3. Imagens: instruções para criação de um container
+	4. container pode ser o banco de dados ou o app, nesse projeto, estamos rodando o banco e o app
 
 	systemctl start docker
 
@@ -19,3 +20,15 @@ sudo docker-compose up --force-recreate -d
 sudo docker-compose up -d --build
 
 docker-compose down && docker-compose build --no-cache && docker-compose up
+
+https://typeorm.io/delete-query-builder#soft-delete
+
+sudo docker build -t rentx ../ #essa linha builda a aplicaçao
+
+sudo docker run -p 3333:3333 rentx #essa linha roda o docker
+
+sudo docker logs rentx -f #essa linha mostra os logs
+
+sudo docker-compose ps
+
+sudo docker-compose stop #essa linha para o container

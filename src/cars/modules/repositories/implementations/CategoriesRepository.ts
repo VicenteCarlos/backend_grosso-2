@@ -1,6 +1,7 @@
-import { getRepository, Repository } from "typeorm"; //observe que esse repository e do typeorm
+import { Repository } from "typeorm"; //observe que esse repository e do typeorm
 import { Category } from "../../entities/Category"
 import { ICategoriesRepository, ICreateCategoryDTO } from "../interfaces/ICategoriesRepository";
+import {AppDataSource} from "../../../../database"
 
 //DTO Data transfer object: criar um objeto responsavel pela transferencia de dados entre uma classe e outra
 
@@ -9,7 +10,7 @@ class CategoriesRepository implements ICategoriesRepository {
     private repository: Repository<Category>
 
     constructor() {
-        this.repository = getRepository(Category) //essa linha garante com que essa classe apenas internamente possa acessar o repository
+        this.repository = AppDataSource.getRepository(Category) //essa linha garante com que essa classe apenas internamente possa acessar o repository
     }
 
     async create({ name, description }: ICreateCategoryDTO): Promise<void> { //essa linha(funçao) recebe um objeto do tipo ICreateCategoryDTO, além disso, Promise<void> = quando n tem retorno, mas está trabalhando com promises
@@ -29,3 +30,5 @@ class CategoriesRepository implements ICategoriesRepository {
 }
 
 export { CategoriesRepository }
+
+//se n rodar migration, n cria as tabelas de entitys

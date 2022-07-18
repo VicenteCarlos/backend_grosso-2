@@ -1,7 +1,7 @@
 import { v4 as uuidV4 } from "uuid"
 import {Column, CreateDateColumn, Entity, PrimaryColumn} from "typeorm"
 
-@Entity("categories") //nessa linha defini-se que essa classe abaixo será uma entidade/tabela
+@Entity("categories") //nessa linha defini-se que essa classe abaixo será uma entidade/tabela, typeorm percebe essa Entyti esta ligada com o entyti da migration pra saber em qual migration vai salvar
 class Category {
     @PrimaryColumn() //defini-se uma chave primaria para a propriedade abaixo (id)
     id?: string //parametro opcional nessa linha

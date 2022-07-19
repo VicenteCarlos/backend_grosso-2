@@ -7,7 +7,7 @@ export const AppDataSource = new DataSource({
     "username": "docker",
     "password": "ignite",
     "database": "rentx",
-    "entities": ["./src/cars/modules/**/entities/*.ts"], //essa linha busca todas as pastas dentro de modules
+    "entities": ["./src/modules/**/entities/*.ts"], //essa linha busca todas as pastas dentro de modules
     "migrations": ["./src/database/migrations/*.ts"]
 })
 

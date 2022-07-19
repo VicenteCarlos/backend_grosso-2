@@ -20,7 +20,7 @@ class CategoriesRepository implements ICategoriesRepository {
             description
             //observe que n foi passado o created`_at, isso porque foi feito na entity que irá criar no banco automaticamente
         })
-
+        
         await this.repository.save(category)
     }
 

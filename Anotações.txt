@@ -31,4 +31,6 @@ sudo docker logs rentx -f #essa linha mostra os logs
 
 sudo docker-compose ps
 
+sudo docker-compose exec app bash
+
 sudo docker-compose stop #essa linha para o container

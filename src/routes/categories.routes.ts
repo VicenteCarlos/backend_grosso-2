@@ -1,8 +1,8 @@
 import { Router } from "express" //router cria as rotas
 // import { Category } from "../model/Category"
 //import { CategoriesRepository } from "../cars/modules/repositories/implementations/CategoriesRepository"
-import createCategoryController  from "../cars/modules/useCases/createCategory";
-import listCategoriesController  from "../cars/modules/useCases/listCategory";
+import createCategoryController  from "../modules/cars/useCases/createCategory";
+import listCategoriesController  from "../modules/cars/useCases/listCategory";
 //import { CreateCategoryService } from "../modules/services/CreateCategoryService"
 
 const categoriesRoutes = Router() //esse Router() infere o tipo do request e response automaticamente, por isso a tipagem nao foi feita logo abaixo

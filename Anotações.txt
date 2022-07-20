@@ -34,3 +34,5 @@ sudo docker-compose ps
 sudo docker-compose exec app bash
 
 sudo docker-compose stop #essa linha para o container
+
+https://www.md5hashgenerator.com/
